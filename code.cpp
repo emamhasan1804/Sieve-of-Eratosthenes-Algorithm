@@ -17,9 +17,9 @@ int32_t main ()
     int n;
     cin>>n;
     vector<bool> prime(n+1,true);
-    for(int i=2;i<=n;i++) {
+    for(int i=2;i<=sqrt(n);i++) {   
         if(prime[i]) {
-            for(int j=i+i;j<=n;j+=i) {
+            for(int j=i+i;j<=n;j+=i) {    //   total complexity O(nloglogn)
                 prime[j]=false;
             }
         }
